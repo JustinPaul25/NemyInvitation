@@ -1,0 +1,607 @@
+/* ========================================
+   CSS CUSTOM PROPERTIES
+   ======================================== */
+:root {
+    /* Colors */
+    --color-dark-navy: #0a1628;
+    --color-navy: #1a2845;
+    --color-teal: #2d5a7b;
+    --color-purple: #3d2645;
+    --color-gold: #d4af37;
+    --color-gold-light: #f4d03f;
+    --color-white: #ffffff;
+    --color-off-white: #f8f8f8;
+    
+    /* Typography */
+    --font-decorative: 'Cormorant Garamond', serif;
+    --font-body: 'Montserrat', sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-xxl: 4rem;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* ========================================
+   RESET & BASE STYLES
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-off-white);
+    background-color: var(--color-dark-navy);
+    overflow-x: hidden;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* ========================================
+   PAGE LAYOUT
+   ======================================== */
+.page {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, 
+        var(--color-dark-navy) 0%, 
+        var(--color-navy) 50%, 
+        var(--color-teal) 100%);
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--spacing-lg);
+    position: relative;
+    z-index: 1;
+}
+
+/* ========================================
+   ANIMATED STARS BACKGROUND
+   ======================================== */
+.stars-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.star,
+.sparkle {
+    position: absolute;
+    background: var(--color-gold);
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+.star {
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--color-gold);
+}
+
+.sparkle {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--color-gold-light);
+    box-shadow: 0 0 15px var(--color-gold-light);
+}
+
+/* Star Positions */
+.star-1 { top: 10%; left: 15%; animation-delay: 0s; }
+.star-2 { top: 20%; left: 80%; animation-delay: 0.5s; }
+.star-3 { top: 40%; left: 10%; animation-delay: 1s; }
+.star-4 { top: 60%; left: 85%; animation-delay: 1.5s; }
+.star-5 { top: 75%; left: 20%; animation-delay: 2s; }
+.star-6 { top: 85%; left: 70%; animation-delay: 0.8s; }
+.star-7 { top: 30%; left: 50%; animation-delay: 1.2s; }
+.star-8 { top: 50%; left: 40%; animation-delay: 1.8s; }
+
+.sparkle-1 { top: 15%; left: 60%; animation-delay: 0.3s; animation-duration: 2.5s; }
+.sparkle-2 { top: 45%; left: 25%; animation-delay: 1.3s; animation-duration: 2.8s; }
+.sparkle-3 { top: 70%; left: 55%; animation-delay: 0.7s; animation-duration: 2.2s; }
+.sparkle-4 { top: 25%; left: 90%; animation-delay: 1.7s; animation-duration: 3s; }
+.sparkle-5 { top: 80%; left: 10%; animation-delay: 2.3s; animation-duration: 2.6s; }
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+}
+
+/* ========================================
+   TOP STAR DECORATION
+   ======================================== */
+.top-star {
+    position: absolute;
+    top: var(--spacing-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    color: var(--color-gold);
+    animation: float 3s ease-in-out infinite;
+}
+
+.star-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 10px var(--color-gold));
+}
+
+@keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0px); }
+    50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+/* ========================================
+   MAIN CONTENT
+   ======================================== */
+.content {
+    text-align: center;
+    padding: var(--spacing-xxl) var(--spacing-sm);
+    position: relative;
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+.save-the-date-title {
+    font-family: var(--font-decorative);
+    font-size: clamp(3rem, 12vw, 5rem);
+    font-weight: 300;
+    letter-spacing: 0.5rem;
+    color: var(--color-gold);
+    margin-bottom: var(--spacing-md);
+    text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    line-height: 1;
+}
+
+.title-word {
+    display: block;
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.title-word:nth-child(1) { animation-delay: 0.2s; }
+.title-word:nth-child(2) { animation-delay: 0.4s; }
+.title-word:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(0.75rem, 3vw, 1rem);
+    font-style: italic;
+    color: var(--color-off-white);
+    margin-bottom: var(--spacing-lg);
+    letter-spacing: 0.2rem;
+    animation: fadeIn 1s ease-out 0.8s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* ========================================
+   EVENT DETAILS
+   ======================================== */
+.event-details {
+    margin: var(--spacing-xl) 0;
+    animation: fadeIn 1s ease-out 1s forwards;
+    opacity: 0;
+}
+
+.honoree-name {
+    font-family: var(--font-decorative);
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    font-weight: 600;
+    color: var(--color-gold);
+    letter-spacing: 0.3rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.event-occasion {
+    font-family: var(--font-decorative);
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    font-weight: 400;
+    color: var(--color-off-white);
+    letter-spacing: 0.2rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.event-date {
+    font-family: var(--font-body);
+    font-size: clamp(1.2rem, 5vw, 2rem);
+    font-weight: 500;
+    color: var(--color-white);
+    letter-spacing: 0.3rem;
+}
+
+/* ========================================
+   EVENT INFO
+   ======================================== */
+.event-info {
+    margin-top: var(--spacing-xl);
+    animation: fadeIn 1s ease-out 1.2s forwards;
+    opacity: 0;
+}
+
+.event-time,
+.event-location,
+.rsvp-info {
+    font-family: var(--font-body);
+    font-size: clamp(0.75rem, 3.5vw, 1rem);
+    font-style: italic;
+    color: var(--color-off-white);
+    margin: var(--spacing-xs) 0;
+    letter-spacing: 0.05rem;
+}
+
+/* ========================================
+   VERTICAL TEXT
+   ======================================== */
+.vertical-text {
+    position: absolute;
+    right: var(--spacing-sm);
+    bottom: var(--spacing-lg);
+    font-family: var(--font-decorative);
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    color: var(--color-gold);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    letter-spacing: 0.3rem;
+    opacity: 0.6;
+    animation: fadeIn 1s ease-out 1.4s forwards;
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+.enter-btn {
+    position: relative;
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-family: var(--font-body);
+    font-size: clamp(0.875rem, 3.5vw, 1rem);
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+    color: var(--color-dark-navy);
+    background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+    animation: fadeIn 1s ease-out 1.6s forwards;
+    opacity: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    text-transform: uppercase;
+}
+
+.enter-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+}
+
+.enter-btn:active {
+    transform: translateY(-1px);
+}
+
+.btn-arrow {
+    font-size: 1.5rem;
+    transition: transform var(--transition-normal);
+}
+
+.enter-btn:hover .btn-arrow {
+    transform: translateX(5px);
+}
+
+/* ========================================
+   SHARE BUTTON
+   ======================================== */
+.share-btn {
+    position: fixed;
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+    transition: all var(--transition-normal);
+    z-index: 100;
+    animation: fadeIn 1s ease-out 1.8s forwards;
+    opacity: 0;
+}
+
+.share-btn svg {
+    width: 24px;
+    height: 24px;
+    color: var(--color-dark-navy);
+}
+
+.share-btn:hover {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 12px 30px rgba(212, 175, 55, 0.6);
+}
+
+.share-btn:active {
+    transform: scale(0.95);
+}
+
+/* ========================================
+   SHARE MODAL
+   ======================================== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 22, 40, 0.95);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+    backdrop-filter: blur(10px);
+}
+
+.modal.active {
+    display: flex;
+    animation: fadeIn var(--transition-normal) forwards;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, var(--color-navy), var(--color-teal));
+    padding: var(--spacing-xl);
+    border-radius: 20px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    animation: scaleIn var(--transition-normal) forwards;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-gold);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.modal-close:hover {
+    background: rgba(212, 175, 55, 0.1);
+    transform: rotate(90deg);
+}
+
+.modal-content h3 {
+    font-family: var(--font-decorative);
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    color: var(--color-gold);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    letter-spacing: 0.1rem;
+}
+
+/* ========================================
+   SHARE BUTTONS
+   ======================================== */
+.share-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.share-option {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-white);
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.share-option svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.share-option:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--color-gold);
+}
+
+.share-option.facebook:hover {
+    background: rgba(24, 119, 242, 0.2);
+    border-color: #1877f2;
+}
+
+.share-option.twitter:hover {
+    background: rgba(29, 161, 242, 0.2);
+    border-color: #1da1f2;
+}
+
+.share-option.whatsapp:hover {
+    background: rgba(37, 211, 102, 0.2);
+    border-color: #25d366;
+}
+
+.share-option.copy-link:hover {
+    background: rgba(212, 175, 55, 0.2);
+    border-color: var(--color-gold);
+}
+
+/* ========================================
+   COPY CONFIRMATION
+   ======================================== */
+.copy-confirmation {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-sm);
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--color-gold);
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+}
+
+.copy-confirmation.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - TABLET
+   ======================================== */
+@media (min-width: 768px) {
+    .container {
+        padding: var(--spacing-xl);
+    }
+    
+    .content {
+        padding: var(--spacing-xxl) var(--spacing-lg);
+    }
+    
+    .top-star {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .vertical-text {
+        font-size: 2.5rem;
+        right: var(--spacing-lg);
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - DESKTOP
+   ======================================== */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .save-the-date-title {
+        letter-spacing: 1rem;
+    }
+    
+    .honoree-name,
+    .event-occasion {
+        letter-spacing: 0.5rem;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus styles for keyboard navigation */
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--color-gold);
+    outline-offset: 3px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .page {
+        background: #000;
+    }
+    
+    .save-the-date-title,
+    .honoree-name {
+        color: #ffff00;
+    }
+}
