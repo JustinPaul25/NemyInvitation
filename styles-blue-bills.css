@@ -2,14 +2,16 @@
    CSS CUSTOM PROPERTIES
    ======================================== */
 :root {
-    /* Colors */
-    --color-dark-navy: #0a1628;
-    --color-navy: #1a2845;
-    --color-teal: #2d5a7b;
-    --color-blue: #2c3e50;
-    --color-bill-blue: #3498db;
-    --color-bill-light: #5dade2;
-    --color-bill-dark: #2874a6;
+    /* Colors - Sage Green Theme */
+    --color-sage: #9CAF88;
+    --color-sage-dark: #5C6B4A;
+    --color-sage-light: #B8C9A8;
+    --color-sage-muted: #7A8B6A;
+    --color-dark-sage: #1a2618;
+    --color-mid-sage: #2d3d2a;
+    --color-bill: #8ba892;
+    --color-bill-light: #a8c4ae;
+    --color-bill-dark: #6b8a72;
     --color-gold: #d4af37;
     --color-gold-light: #f4d03f;
     --color-white: #ffffff;
@@ -52,7 +54,7 @@ html {
 body {
     font-family: var(--font-body);
     color: var(--color-off-white);
-    background-color: var(--color-dark-navy);
+    background-color: var(--color-dark-sage);
     overflow-x: hidden;
     min-height: 100vh;
     line-height: 1.6;
@@ -67,14 +69,14 @@ body {
     left: 0;
     right: 0;
     height: 60px;
-    background: rgba(10, 22, 40, 0.95);
+    background: rgba(26, 38, 24, 0.95);
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 var(--spacing-lg);
     z-index: 100;
-    border-bottom: 1px solid rgba(52, 152, 219, 0.2);
+    border-bottom: 1px solid rgba(156, 175, 136, 0.3);
 }
 
 .nav-back,
@@ -82,14 +84,14 @@ body {
     width: 40px;
     height: 40px;
     background: transparent;
-    border: 2px solid var(--color-bill-blue);
+    border: 2px solid var(--color-sage);
     border-radius: 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all var(--transition-normal);
-    color: var(--color-bill-blue);
+    color: var(--color-sage);
 }
 
 .nav-back svg {
@@ -99,7 +101,7 @@ body {
 
 .nav-back:hover,
 .nav-menu:hover {
-    background: var(--color-bill-blue);
+    background: var(--color-sage);
     color: var(--color-white);
     transform: scale(1.05);
 }
@@ -128,9 +130,9 @@ body {
     position: relative;
     overflow: hidden;
     background: linear-gradient(135deg, 
-        #0a1628 0%, 
-        #1a2f4a 50%, 
-        #2c3e50 100%);
+        var(--color-dark-sage) 0%, 
+        var(--color-mid-sage) 50%, 
+        var(--color-sage-dark) 100%);
 }
 
 .container {
@@ -163,10 +165,10 @@ body {
 .floating-bill {
     width: 40px;
     height: 20px;
-    background: linear-gradient(135deg, var(--color-bill-blue), var(--color-bill-light));
+    background: linear-gradient(135deg, var(--color-bill), var(--color-bill-light));
     border-radius: 3px;
     animation: floatBill 12s ease-in-out infinite;
-    box-shadow: 0 0 15px var(--color-bill-blue);
+    box-shadow: 0 0 15px var(--color-bill);
 }
 
 .coin {
@@ -238,14 +240,14 @@ body {
     width: 80px;
     height: 80px;
     margin: 0 auto var(--spacing-lg);
-    color: var(--color-bill-blue);
+    color: var(--color-sage);
     animation: glowBill 3s ease-in-out infinite;
 }
 
 @keyframes glowBill {
     0%, 100% { 
         transform: scale(1);
-        filter: drop-shadow(0 0 15px var(--color-bill-blue));
+        filter: drop-shadow(0 0 15px var(--color-bill));
     }
     50% { 
         transform: scale(1.05);
@@ -345,7 +347,7 @@ body {
 .bill-item:hover {
     transform: translateX(10px);
     background: rgba(52, 152, 219, 0.15);
-    border-color: var(--color-bill-blue);
+    border-color: var(--color-bill);
     box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
 }
 
@@ -371,14 +373,14 @@ body {
     transform: translate(-50%, -50%);
     width: 45px;
     height: 45px;
-    color: var(--color-bill-blue);
+    color: var(--color-sage);
     transition: all var(--transition-normal);
 }
 
 .bill-icon svg {
     width: 100%;
     height: 100%;
-    filter: drop-shadow(0 0 8px var(--color-bill-blue));
+    filter: drop-shadow(0 0 8px var(--color-bill));
 }
 
 .number {
@@ -431,7 +433,7 @@ body {
     position: relative;
     padding: var(--spacing-lg);
     background: rgba(52, 152, 219, 0.05);
-    border-left: 4px solid var(--color-bill-blue);
+    border-left: 4px solid var(--color-bill);
     border-radius: 12px;
 }
 
@@ -469,7 +471,7 @@ body {
     font-size: clamp(0.875rem, 3.5vw, 1rem);
     font-weight: 500;
     letter-spacing: 0.2rem;
-    color: var(--color-dark-navy);
+    color: var(--color-dark-sage);
     background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
     border: none;
     border-radius: 50px;
@@ -509,7 +511,7 @@ body {
     right: var(--spacing-lg);
     width: 56px;
     height: 56px;
-    background: linear-gradient(135deg, var(--color-bill-blue), var(--color-bill-light));
+    background: linear-gradient(135deg, var(--color-bill), var(--color-bill-light));
     border: none;
     border-radius: 50%;
     cursor: pointer;

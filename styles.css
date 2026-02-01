@@ -2,11 +2,13 @@
    CSS CUSTOM PROPERTIES
    ======================================== */
 :root {
-    /* Colors */
-    --color-dark-navy: #0a1628;
-    --color-navy: #1a2845;
-    --color-teal: #2d5a7b;
-    --color-purple: #3d2645;
+    /* Colors - Sage Green Theme */
+    --color-sage: #9CAF88;
+    --color-sage-dark: #5C6B4A;
+    --color-sage-light: #B8C9A8;
+    --color-sage-muted: #7A8B6A;
+    --color-dark-sage: #1a2618;
+    --color-mid-sage: #2d3d2a;
     --color-gold: #d4af37;
     --color-gold-light: #f4d03f;
     --color-white: #ffffff;
@@ -48,7 +50,7 @@ html {
 body {
     font-family: var(--font-body);
     color: var(--color-off-white);
-    background-color: var(--color-dark-navy);
+    background-color: var(--color-dark-sage);
     overflow-x: hidden;
     min-height: 100vh;
     line-height: 1.6;
@@ -66,9 +68,9 @@ body {
     position: relative;
     overflow: hidden;
     background: linear-gradient(135deg, 
-        var(--color-dark-navy) 0%, 
-        var(--color-navy) 50%, 
-        var(--color-teal) 100%);
+        var(--color-dark-sage) 0%, 
+        var(--color-mid-sage) 50%, 
+        var(--color-sage-dark) 100%);
 }
 
 .container {
@@ -95,7 +97,7 @@ body {
 .star,
 .sparkle {
     position: absolute;
-    background: var(--color-gold);
+    background: var(--color-sage);
     animation: twinkle 3s ease-in-out infinite;
 }
 
@@ -103,7 +105,7 @@ body {
     width: 2px;
     height: 2px;
     border-radius: 50%;
-    box-shadow: 0 0 10px var(--color-gold);
+    box-shadow: 0 0 10px var(--color-sage);
 }
 
 .sparkle {
@@ -145,14 +147,14 @@ body {
     transform: translateX(-50%);
     width: 50px;
     height: 50px;
-    color: var(--color-gold);
+    color: var(--color-sage);
     animation: float 3s ease-in-out infinite;
 }
 
 .star-svg {
     width: 100%;
     height: 100%;
-    filter: drop-shadow(0 0 10px var(--color-gold));
+    filter: drop-shadow(0 0 10px var(--color-sage));
 }
 
 @keyframes float {
@@ -177,9 +179,9 @@ body {
     font-size: clamp(3rem, 12vw, 5rem);
     font-weight: 300;
     letter-spacing: 0.5rem;
-    color: var(--color-gold);
+    color: var(--color-sage);
     margin-bottom: var(--spacing-md);
-    text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+    text-shadow: 0 0 30px rgba(156, 175, 136, 0.5);
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -235,8 +237,8 @@ body {
     margin: 0 auto;
     border-radius: 16px;
     object-fit: cover;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(212, 175, 55, 0.15);
-    border: 3px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(156, 175, 136, 0.2);
+    border: 3px solid rgba(156, 175, 136, 0.4);
 }
 
 @media (min-width: 768px) {
@@ -262,7 +264,7 @@ body {
     font-family: var(--font-decorative);
     font-size: clamp(2rem, 8vw, 3.5rem);
     font-weight: 600;
-    color: var(--color-gold);
+    color: var(--color-sage);
     letter-spacing: 0.3rem;
     margin-bottom: var(--spacing-xs);
 }
@@ -313,7 +315,7 @@ body {
     bottom: var(--spacing-lg);
     font-family: var(--font-decorative);
     font-size: clamp(1.5rem, 5vw, 2rem);
-    color: var(--color-gold);
+    color: var(--color-sage);
     writing-mode: vertical-rl;
     text-orientation: mixed;
     letter-spacing: 0.3rem;
@@ -332,7 +334,7 @@ body {
     font-size: clamp(0.875rem, 3.5vw, 1rem);
     font-weight: 500;
     letter-spacing: 0.2rem;
-    color: var(--color-dark-navy);
+    color: var(--color-dark-sage);
     background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
     border: none;
     border-radius: 50px;
@@ -391,7 +393,7 @@ body {
 .share-btn svg {
     width: 24px;
     height: 24px;
-    color: var(--color-dark-navy);
+    color: var(--color-dark-sage);
 }
 
 .share-btn:hover {
@@ -427,7 +429,7 @@ body {
 }
 
 .modal-content {
-    background: linear-gradient(135deg, var(--color-navy), var(--color-teal));
+    background: linear-gradient(135deg, var(--color-mid-sage), var(--color-sage-dark));
     padding: var(--spacing-xl);
     border-radius: 20px;
     max-width: 500px;
@@ -458,7 +460,7 @@ body {
     background: transparent;
     border: none;
     font-size: 2rem;
-    color: var(--color-gold);
+    color: var(--color-sage);
     cursor: pointer;
     transition: all var(--transition-fast);
     display: flex;
@@ -475,7 +477,7 @@ body {
 .modal-content h3 {
     font-family: var(--font-decorative);
     font-size: clamp(1.5rem, 5vw, 2rem);
-    color: var(--color-gold);
+    color: var(--color-sage);
     margin-bottom: var(--spacing-lg);
     text-align: center;
     letter-spacing: 0.1rem;
@@ -546,7 +548,7 @@ body {
     padding: var(--spacing-sm);
     text-align: center;
     font-size: 0.875rem;
-    color: var(--color-gold);
+    color: var(--color-sage);
     background: rgba(212, 175, 55, 0.1);
     border-radius: 8px;
     opacity: 0;

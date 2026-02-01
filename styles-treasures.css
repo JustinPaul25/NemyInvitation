@@ -2,14 +2,16 @@
    CSS CUSTOM PROPERTIES
    ======================================== */
 :root {
-    /* Colors */
-    --color-dark-navy: #0a1628;
-    --color-navy: #1a2845;
-    --color-teal: #2d5a7b;
-    --color-purple: #3d2645;
-    --color-treasure: #9b59b6;
-    --color-treasure-light: #bb8fce;
-    --color-treasure-dark: #7d3c98;
+    /* Colors - Sage Green Theme */
+    --color-sage: #9CAF88;
+    --color-sage-dark: #5C6B4A;
+    --color-sage-light: #B8C9A8;
+    --color-sage-muted: #7A8B6A;
+    --color-dark-sage: #1a2618;
+    --color-mid-sage: #2d3d2a;
+    --color-treasure: #8a9a7a;
+    --color-treasure-light: #a8b898;
+    --color-treasure-dark: #6a7a5a;
     --color-gold: #d4af37;
     --color-gold-light: #f4d03f;
     --color-white: #ffffff;
@@ -52,7 +54,7 @@ html {
 body {
     font-family: var(--font-body);
     color: var(--color-off-white);
-    background-color: var(--color-dark-navy);
+    background-color: var(--color-dark-sage);
     overflow-x: hidden;
     min-height: 100vh;
     line-height: 1.6;
@@ -67,14 +69,14 @@ body {
     left: 0;
     right: 0;
     height: 60px;
-    background: rgba(10, 22, 40, 0.95);
+    background: rgba(26, 38, 24, 0.95);
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 var(--spacing-lg);
     z-index: 100;
-    border-bottom: 1px solid rgba(155, 89, 182, 0.2);
+    border-bottom: 1px solid rgba(156, 175, 136, 0.3);
 }
 
 .nav-back,
@@ -82,7 +84,7 @@ body {
     width: 40px;
     height: 40px;
     background: transparent;
-    border: 2px solid var(--color-treasure);
+    border: 2px solid var(--color-sage);
     border-radius: 8px;
     cursor: pointer;
     display: flex;
@@ -128,9 +130,9 @@ body {
     position: relative;
     overflow: hidden;
     background: linear-gradient(135deg, 
-        #0a1628 0%, 
-        #1a1a3e 50%, 
-        #3d2645 100%);
+        var(--color-dark-sage) 0%, 
+        var(--color-mid-sage) 50%, 
+        var(--color-sage-dark) 100%);
 }
 
 .container {
@@ -468,7 +470,7 @@ body {
     font-size: clamp(0.875rem, 3.5vw, 1rem);
     font-weight: 500;
     letter-spacing: 0.2rem;
-    color: var(--color-dark-navy);
+    color: var(--color-dark-sage);
     background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
     border: none;
     border-radius: 50px;

@@ -98,14 +98,14 @@ function getNavigationMenuCSS() {
         width: 44px;
         height: 44px;
         background: transparent;
-        border: 2px solid #d4af37;
+        border: 2px solid #9CAF88;
         border-radius: 50%;
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
         transition: all 0.3s ease;
-        color: #d4af37;
+        color: #9CAF88;
     }
 
     .nav-close svg {
@@ -114,8 +114,8 @@ function getNavigationMenuCSS() {
     }
 
     .nav-close:hover {
-        background: #d4af37;
-        color: #0a0a0a;
+        background: #9CAF88;
+        color: #1a2618;
         transform: rotate(90deg);
     }
 
@@ -123,7 +123,7 @@ function getNavigationMenuCSS() {
         font-family: 'Cormorant Garamond', serif;
         font-size: 2.5rem;
         font-weight: 600;
-        color: #d4af37;
+        color: #9CAF88;
         margin-bottom: 3rem;
         text-align: center;
     }
@@ -141,8 +141,8 @@ function getNavigationMenuCSS() {
         align-items: center;
         gap: 1.5rem;
         padding: 1.5rem;
-        background: rgba(212, 175, 55, 0.05);
-        border: 1px solid rgba(212, 175, 55, 0.2);
+        background: rgba(156, 175, 136, 0.05);
+        border: 1px solid rgba(156, 175, 136, 0.2);
         border-radius: 12px;
         text-decoration: none;
         color: #f8f8f8;
@@ -150,14 +150,14 @@ function getNavigationMenuCSS() {
     }
 
     .nav-link:hover {
-        background: rgba(212, 175, 55, 0.15);
-        border-color: #d4af37;
+        background: rgba(156, 175, 136, 0.15);
+        border-color: #9CAF88;
         transform: translateX(10px);
     }
 
     .nav-link.active {
-        background: rgba(212, 175, 55, 0.2);
-        border-color: #d4af37;
+        background: rgba(156, 175, 136, 0.2);
+        border-color: #9CAF88;
     }
 
     .nav-icon {

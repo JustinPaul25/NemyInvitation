@@ -2,15 +2,17 @@
    CSS CUSTOM PROPERTIES
    ======================================== */
 :root {
-    /* Colors */
-    --color-dark-navy: #0a1628;
-    --color-navy: #1a2845;
-    --color-teal: #2d5a7b;
-    --color-purple: #3d2645;
-    --color-candle: #f4e4c1;
-    --color-candle-light: #fff5d6;
-    --color-flame: #ffa500;
-    --color-flame-glow: #ffd700;
+    /* Colors - Sage Green Theme */
+    --color-sage: #9CAF88;
+    --color-sage-dark: #5C6B4A;
+    --color-sage-light: #B8C9A8;
+    --color-sage-muted: #7A8B6A;
+    --color-dark-sage: #1a2618;
+    --color-mid-sage: #2d3d2a;
+    --color-candle: #e8e4c8;
+    --color-candle-light: #f5f2dc;
+    --color-flame: #c9a962;
+    --color-flame-glow: #d4af37;
     --color-gold: #d4af37;
     --color-gold-light: #f4d03f;
     --color-white: #ffffff;
@@ -53,7 +55,7 @@ html {
 body {
     font-family: var(--font-body);
     color: var(--color-off-white);
-    background-color: var(--color-dark-navy);
+    background-color: var(--color-dark-sage);
     overflow-x: hidden;
     min-height: 100vh;
     line-height: 1.6;
@@ -68,14 +70,14 @@ body {
     left: 0;
     right: 0;
     height: 60px;
-    background: rgba(10, 22, 40, 0.95);
+    background: rgba(26, 38, 24, 0.95);
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 var(--spacing-lg);
     z-index: 100;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    border-bottom: 1px solid rgba(156, 175, 136, 0.3);
 }
 
 .nav-back,
@@ -83,14 +85,14 @@ body {
     width: 40px;
     height: 40px;
     background: transparent;
-    border: 2px solid var(--color-gold);
+    border: 2px solid var(--color-sage);
     border-radius: 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all var(--transition-normal);
-    color: var(--color-gold);
+    color: var(--color-sage);
 }
 
 .nav-back svg {
@@ -101,7 +103,7 @@ body {
 .nav-back:hover,
 .nav-menu:hover {
     background: var(--color-gold);
-    color: var(--color-dark-navy);
+    color: var(--color-dark-sage);
     transform: scale(1.05);
 }
 
@@ -129,9 +131,9 @@ body {
     position: relative;
     overflow: hidden;
     background: linear-gradient(135deg, 
-        var(--color-dark-navy) 0%, 
-        #1a1a3e 50%, 
-        var(--color-purple) 100%);
+        var(--color-dark-sage) 0%, 
+        var(--color-mid-sage) 50%, 
+        var(--color-sage-dark) 100%);
 }
 
 .container {
@@ -269,7 +271,7 @@ body {
     font-family: var(--font-decorative);
     font-size: clamp(2.5rem, 10vw, 4rem);
     font-weight: 600;
-    color: var(--color-gold);
+    color: var(--color-sage);
     letter-spacing: 0.3rem;
     margin-bottom: var(--spacing-sm);
     text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
@@ -413,7 +415,7 @@ body {
     font-family: var(--font-decorative);
     font-size: clamp(1.125rem, 4vw, 1.5rem);
     font-weight: 600;
-    color: var(--color-gold);
+    color: var(--color-sage);
     margin-bottom: var(--spacing-xs);
     letter-spacing: 0.05rem;
 }
@@ -454,7 +456,7 @@ body {
 .quote cite {
     font-family: var(--font-body);
     font-size: clamp(0.875rem, 3vw, 1rem);
-    color: var(--color-gold);
+    color: var(--color-sage);
     font-style: normal;
     letter-spacing: 0.1rem;
 }
@@ -476,7 +478,7 @@ body {
     font-size: clamp(0.875rem, 3.5vw, 1rem);
     font-weight: 500;
     letter-spacing: 0.2rem;
-    color: var(--color-dark-navy);
+    color: var(--color-dark-sage);
     background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
     border: none;
     border-radius: 50px;
