@@ -218,6 +218,33 @@ body {
     opacity: 0;
 }
 
+/* ========================================
+   HONOREE PHOTO
+   ======================================== */
+.honoree-photo {
+    margin: var(--spacing-lg) auto;
+    animation: fadeIn 1s ease-out 0.9s forwards;
+    opacity: 0;
+}
+
+.honoree-photo img {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(212, 175, 55, 0.15);
+    border: 3px solid rgba(212, 175, 55, 0.3);
+}
+
+@media (min-width: 768px) {
+    .honoree-photo img {
+        max-width: 360px;
+    }
+}
+
 @keyframes fadeIn {
     to { opacity: 1; }
 }
